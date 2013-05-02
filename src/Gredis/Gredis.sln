@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gredis.Client", "Gredis.Client\Gredis.Client.csproj", "{1F7F2108-960F-43E4-BB35-61CB91DB03F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gredis.Console", "Gredis.Console\Gredis.Console.csproj", "{74E3B965-9D8F-45A3-9FFE-0C90D7A974F1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F7F2108-960F-43E4-BB35-61CB91DB03F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F7F2108-960F-43E4-BB35-61CB91DB03F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F7F2108-960F-43E4-BB35-61CB91DB03F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F7F2108-960F-43E4-BB35-61CB91DB03F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74E3B965-9D8F-45A3-9FFE-0C90D7A974F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74E3B965-9D8F-45A3-9FFE-0C90D7A974F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74E3B965-9D8F-45A3-9FFE-0C90D7A974F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74E3B965-9D8F-45A3-9FFE-0C90D7A974F1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
