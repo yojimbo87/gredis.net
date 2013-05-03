@@ -7,6 +7,16 @@ namespace Gredis.Client
 {
     public class GDocument : Dictionary<string, object>
     {
+
+        public long ID
+        {
+            get
+            {
+                return this.HasField("@id") ? this.GetField<long>("@id") : 0;
+            }
+            set { this.SetField("@id", value); }
+        }
+
         public T GetField<T>(string fieldPath)
         {
             Type type = typeof(T);
@@ -44,7 +54,7 @@ namespace Gredis.Client
                                 if (enumerator.Current is GDocument)
                                 {
                                     var instance = Activator.CreateInstance(elementType);
-                                    ((GDocument)enumerator.Current).Map(ref instance);
+                                    ((GDocument)enumerator.Current).MapTo(ref instance);
 
                                     ((IList)value).Add(instance);
                                 }
@@ -89,7 +99,7 @@ namespace Gredis.Client
                             if (enumerator.Current is GDocument)
                             {
                                 var instance = Activator.CreateInstance(elementType);
-                                ((GDocument)enumerator.Current).Map(ref instance);
+                                ((GDocument)enumerator.Current).MapTo(ref instance);
 
                                 ((IList)value).Add(instance);
                             }
@@ -208,6 +218,27 @@ namespace Gredis.Client
             return genericObject;
         }
 
+
+        public void MapFrom(object obj)
+        {
+            if (obj is Dictionary<string, object>)
+            {
+                foreach (KeyValuePair<string, object> item in (Dictionary<string, object>)obj)
+                {
+                    this.SetField(item.Key, item.Value);
+                }
+            }
+            else
+            {
+                Type objType = obj.GetType();
+
+                foreach (PropertyInfo property in objType.GetProperties())
+                {
+                    this.SetField(property.Name, property.GetValue(obj));
+                }
+            }
+        }
+
         private T ToObject<T>(T genericObject, string path) where T : class, new()
         {
             Type genericObjectType = genericObject.GetType();
@@ -295,7 +326,8 @@ namespace Gredis.Client
         }
 
         // maps document fields to specified object
-        private void Map(ref object obj)
+        // TODO: make it recursive
+        private void MapTo(ref object obj)
         {
             if (obj is Dictionary<string, object>)
             {

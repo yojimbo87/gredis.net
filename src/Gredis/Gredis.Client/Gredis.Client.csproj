@@ -52,15 +52,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="API\GClient.cs" />
+    <Compile Include="API\Query\GCreate.cs" />
+    <Compile Include="API\Query\GCreateEdge.cs" />
+    <Compile Include="API\Query\GCreateVertex.cs" />
     <Compile Include="API\Types\GDocument.cs" />
     <Compile Include="API\Types\GEdge.cs" />
     <Compile Include="API\Types\GEdgeDirection.cs" />
     <Compile Include="API\Types\GVertex.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Protocol\Redis.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
