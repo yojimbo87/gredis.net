@@ -51,7 +51,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GClient.cs" />
+    <Compile Include="API\GClient.cs" />
+    <Compile Include="API\Types\GDocument.cs" />
+    <Compile Include="API\Types\GEdge.cs" />
+    <Compile Include="API\Types\GEdgeDirection.cs" />
+    <Compile Include="API\Types\GVertex.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
